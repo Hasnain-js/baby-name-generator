@@ -34,16 +34,19 @@ const option = reactive<optionState>({
         <div class="option-buttons">
           <button class="option option-left"
           :class="option.gender === 'boy' && 'option-active'"
+          @click="option.gender = Gender.BOY"
           >
             boy
           </button>
           <button class="option"
           :class="option.gender === 'unisex' && 'option-active'"
+          @click="option.gender = Gender.UNISEX"
           >
             unisex
           </button>
           <button class="option option-right"
           :class="option.gender === 'girl' && 'option-active'"
+          @click="option.gender = Gender.GIRL"
           >girl</button>
         </div>
     </div>
@@ -52,11 +55,13 @@ const option = reactive<optionState>({
         <div class="option-buttons">
           <button class="option option-left"
           :class="option.popularity === 'trendy' && 'option-active'"
+          @click="option.popularity = Popularity.TRENDY"
           >
             trendy
           </button>
           <button class="option option-right"
           :class="option.popularity === 'unique' && 'option-active'"
+          @click="option.popularity = Popularity.UNIQUE"
           >
             unique
           </button>
@@ -67,17 +72,21 @@ const option = reactive<optionState>({
         <div class="option-buttons">
           <button class="option option-left"
           :class="option.length === 'long' && 'option-active'"
+          @click="option.length = Length.LONG"
           >long</button>
           <button class="option"
           :class="option.length === 'all' && 'option-active'"
+          @click="option.length = Length.All"
           >all</button>
           <button class="option option-right"
           :class="option.length === 'short' && 'option-active'"
+          @click="option.length = Length.SHORT"
           >short</button>
         </div>
     </div>
     <div class="option-container">
     </div>
+    <button class="primary">Find Name</button>
     </div>
   </div>
 </template>
@@ -130,5 +139,17 @@ const option = reactive<optionState>({
     .option-active{
       background: rgb(233, 66, 66);
       color: white;
+    }
+    .options-container .primary{
+      background: rgb(233, 66, 66);
+      color:white;
+      border-radius: 1rem;
+      outline: none;
+      border: none;
+      padding: 0.75rem 4rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
+
     }
 </style>
